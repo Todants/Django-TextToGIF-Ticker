@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+TextToGIF
+{% endblock %}
+
+{% block contect %}
+    <h1>Введите текст для гифки</h1>
+    <form method="post" action="{% url 'input_page' %}">
+      {% csrf_token %}
+      <input type="text" name="input_text">
+      <button type="submit">Submit</button>
+    </form>
+
+{% endblock %}
