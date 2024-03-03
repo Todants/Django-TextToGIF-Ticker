@@ -61,7 +61,7 @@ def input_page(request):
 
         response = HttpResponse(gif_data, content_type='image/gif')
         response['Content-Disposition'] = f'attachment; filename="{os.path.basename(gif_path)}"'
-
+        os.remove(gif_path)
         return response
     else:
         return render(request, 'main/index.html')
